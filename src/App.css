@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.bakery-item{
+  margin-left: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  justify-content: center;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
