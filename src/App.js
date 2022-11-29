@@ -70,17 +70,17 @@ function App() {
   return (
     
     <div className="App">
-      <Nav className="container-nav">
+      <Nav onSelect={onSelect} className="container-nav">
         <Container>
             <Row>
                 <h5> Vegetarian Friendly </h5>
                 <Col sm={4}>
-                    <Nav.Item> <input type='radio' name='v_friendly' id="all_v_friendly" value='all'/> 
+                    <Nav.Item> <Nav.Link eventKey="all"> </Nav.Link><input type='radio' name='v_friendly' id="all_v_friendly" value='all'/> 
                     <label for="all_v_friendly"> All Foods</label>
                     </Nav.Item>
-                    <Nav.Item><input type='radio' name='v_friendly' id="is_v_friendly" value='True'/>
+                    <Nav.Item> <Nav.Link eventKey="v_friendly"> </Nav.Link><input type='radio' name='v_friendly' id="is_v_friendly" value='True'/>
                     <label for="is_v_friendly"> Vegetarian Friendly</label></Nav.Item>
-                    <Nav.Item><input type='radio' name='v_friendly' id="is_not_v_friendly" value='False'/>
+                    <Nav.Item><Nav.Link eventKey="not_v_friendly"> </Nav.Link><input type='radio' name='v_friendly' id="is_not_v_friendly" value='False'/>
                     <label for="is_v_friendly"> Non-Vegetarian Friendly</label>
                     </Nav.Item> 
                 </Col>
