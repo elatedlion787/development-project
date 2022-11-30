@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-export default function FilterBar({selectDietFilterType, selectFilterType, sorting, ThaiFood, clearCart, cartTotal, cart}){
+export default function FilterBar({selectDietFilterType, selectFilterType, sorting}){
     return(
     <Nav>
         <Container>
@@ -50,7 +50,6 @@ export default function FilterBar({selectDietFilterType, selectFilterType, sorti
             </Col>
           </Row>
           <Row>
-          <Aggregator data={ThaiFood} cart={cart} cartTotal={cartTotal} onClick={clearCart}/>
           <br>
           </br>
           </Row>

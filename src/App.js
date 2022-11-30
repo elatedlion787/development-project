@@ -127,7 +127,8 @@ function App() {
       </div>
       <div>
       
-      <FilterBar selectDietFilterType={selectDietFilterType} selectFilterType={selectFilterType} sorting={sorting} ThaiFood={ThaiFood} clearCart={clearCart} cartTotal={cartTotal} cart={cart}/>
+      <FilterBar selectDietFilterType={selectDietFilterType} selectFilterType={selectFilterType} sorting={sorting}/>
+      <Aggregator data={ThaiFood} cart={cart} cartTotal={cartTotal} onClick={clearCart}/>
       
       <div className="wrapper">
         {data.map((item, index) => ( // TODO: map bakeryData to   

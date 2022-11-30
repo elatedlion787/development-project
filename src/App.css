@@ -40,6 +40,10 @@
 .bakery-item button{
   margin-bottom: 0px;
 }
+.aggregator{
+  box-shadow: 0 2.5px 2.5px 0 rgba(0,0,0,0.2);
+  font-size: 40px;
+}
 
 .bakery-item{
   margin-left: 25%;
