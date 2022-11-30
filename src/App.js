@@ -10,6 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Aggregator from './components/Aggregator';
+import FilterBar from './components/FilterBar'
 /*
 Create our list of data to display on the website using an array of objects
 */
@@ -119,64 +120,15 @@ function App() {
   }
 
   
-
-
   return (
     <div className="App">
       <div className="header">
       <h1> ElatedLion787's Thai Resturant</h1>
       </div>
       <div>
-      <Nav>
-        <Container>
-          <h4> Filter for Your Desired Food!</h4>
-          <Row>
-          <h5> Choose Dietary Restriction: </h5>
-                <Col sm={4}>
-                  <form>
-                    <select name="selectList" onChange={selectDietFilterType}> 
-                      <option value="all"> None </option>
-                      <option value="v_friendly"> Vegetarian Friendly </option>
-                      <option value="non_v_friendly"> Non-Vegetarian Friendly</option>
-                    </select>
-                  </form>
-                </Col>
-          </Row>
-          <Row>
-          <h5> Choose Type of Food: </h5>
-                <Col sm={4}>
-                  <form>
-                    <select name="selectList" onChange={selectFilterType}> 
-                      <option value="all"> All </option>
-                      <option value="Curry"> Curry </option>
-                      <option value="Noodle"> Noodle</option>
-                      <option value="Soup"> Soup</option>
-                    </select>
-                  </form>
-                </Col>
-          </Row>
-          <Row>
-            <h5> Choose Property to Sort By: </h5>
-            <Col sm={4}>
-                <form>
-                    <Nav.Item> <input type='radio' name='sort' id="price" value='price-lh' onChange={sorting} />
-                    <label for="sort"> Price High-Low</label> </Nav.Item>
-
-                    <Nav.Item> <input type='radio' name='sort' id="price" value='price-hl' onChange={sorting}/>
-                    <label for="sort"> Price Low-High</label> </Nav.Item>
-                </form>
-            </Col>
-          </Row>
-          <Row>
-          <Aggregator data={ThaiFood} cart={cart} cartTotal={cartTotal} onClick={clearCart}/>
-          <br>
-          </br>
-          </Row>
-          
-        </Container>
-        </Nav>
       
-
+      <FilterBar selectDietFilterType={selectDietFilterType} selectFilterType={selectFilterType} sorting={sorting} ThaiFood={ThaiFood} clearCart={clearCart} cartTotal={cartTotal} cart={cart}/>
+      
       <div className="wrapper">
         {data.map((item, index) => ( // TODO: map bakeryData to   
           matchDietFilterType(item) &&

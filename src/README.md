@@ -10,10 +10,16 @@ The goal of the application was to create an e-commerce based resturant website 
 Some of the usability principles I considered were learnability/memorability. I utilized a very simple interface, with a green-filter section and a card-based system that was very intutive. In order to separate products, I considered the visual hierarchy of product displays and used the "card" based display system that separates cards with a shadow around the card. I also bolded the names of the products in order to have the information stand out.
 
 ### Organization of Components
-The main component I have created is a card component that is called ThaiItem. Each ThaiItem object contains information for the respective product. I chose not to place my filter in a component, due to its connection to a lot of state variables and functions in App.js. 
+There are two large components: The FilterBar component and the ThaiItem component.
+The FilterBar component is made up of a filtering section, as well as an Aggregator component, which stores the Cart Total and all the items that are added to the order. 
+The Aggregator component is made up of a CartItem component, where each CartItem represents each individual item on the "tab"
+The ThaiItem component is a component that makes up the item card. This displays the respective food along with its qualities (price, vegetarian friendly) and its quantity. There are also buttons to add/remove the item from the cart.
 
 ### How Data is Passed Down Through Components
-When I map each element of data to a ThaiItem, i pass the element's info (Price, Name, Vegetarian Friendly, Type) as well as the index of the element in the array and the cart (which allows us to display the Quantity of the item in the cart).
+Data is passed through components via props. The FilterBar component receives filtering, sorting and clearing cart functions along with state variables representing the data, the cart and the cartTotal. The FilterBar ingests some of this data, and passes some of the data to the Aggregator via props (which is also then passed to the CartItem component). 
+
+The ThaiItem component (which represents the card) receives an element of the data array + the index + an add/remove onClick function for the aggregator and the cart via props. It then creates a card using this data. 
+
 
 ### How the User Triggers State Changes
 The user can trigger state changes the following ways: Adding an item to the cart, Selecting a Filter, Selecting a Sort Mechanism, Removing an Item from the cart or clearing the cart
