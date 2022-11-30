@@ -9,6 +9,7 @@ import { NavItem } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Aggregator from './components/Aggregator';
 /*
 Create our list of data to display on the website using an array of objects
 */
@@ -36,7 +37,7 @@ function App() {
   // define a cart with length of our ThaiFood array
   const [cart, setCart] = useState(Array(ThaiFood.length).fill(0));
   // aggregator to keep track of all the items in the cart. 
-  const [cartTotal, setCartTotal] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0.00);
   const [type, setType] = useState("all")
   const [data, setData] = useState(ThaiFood);
   const [diet, setDiet] = useState("all")
@@ -167,8 +168,7 @@ function App() {
             </Col>
           </Row>
           <Row>
-          <h3> Total Price of Items in Cart: ${(Math.round(cartTotal * 100) / 100).toFixed(2)} </h3>
-          <button onClick={() => clearCart()}> Clear Cart </button>
+          <Aggregator data={ThaiFood} cart={cart} cartTotal={cartTotal} onClick={clearCart}/>
           <br>
           </br>
           </Row>

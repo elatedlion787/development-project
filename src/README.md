@@ -10,7 +10,7 @@ The goal of the application was to create an e-commerce based resturant website 
 Some of the usability principles I considered were learnability/memorability. I utilized a very simple interface, with a green-filter section and a card-based system that was very intutive. In order to separate products, I considered the visual hierarchy of product displays and used the "card" based display system that separates cards with a shadow around the card. I also bolded the names of the products in order to have the information stand out.
 
 ### Organization of Components
-The main component I have created is a card component that is called ThaiItem. Each ThaiItem object contains information for the respective product. I chose not to place my filter in a component, due to its connection to a lot of state variables and functions in App.js.
+The main component I have created is a card component that is called ThaiItem. Each ThaiItem object contains information for the respective product. I chose not to place my filter in a component, due to its connection to a lot of state variables and functions in App.js. 
 
 ### How Data is Passed Down Through Components
 When I map each element of data to a ThaiItem, i pass the element's info (Price, Name, Vegetarian Friendly, Type) as well as the index of the element in the array and the cart (which allows us to display the Quantity of the item in the cart).
