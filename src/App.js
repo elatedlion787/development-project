@@ -25,6 +25,7 @@ const ThaiFood = [
   {name: "Pad See Ew", price: 17.49, type: "Noodle", v_friendly: true,image: 'images/download-8.jpg'},
   {name: "Pad Kee Mao", price: 19.00, type: "Noodle", v_friendly: true, image: 'images/download-9.jpg'},
   {name: "Crispy Chicken Pad Woon Sen", type: "Noodle", price: 12.00, v_friendly: false, image: 'images/download-10.jpg'},
+  {name: "Tom Kha Gai", type:"Soup", price: 9.99, v_friendly: true, image: 'images', image:'images/download-15.jpg'}
 ]
 
 
@@ -32,9 +33,6 @@ const ThaiFood = [
 
 
 function App() {
-  function defaultSort(a, b){
-    return a;
-  }
   // define a cart with length of our ThaiFood array
   const [cart, setCart] = useState(Array(ThaiFood.length).fill(0));
   // aggregator to keep track of all the items in the cart. 
@@ -170,6 +168,9 @@ function App() {
           </Row>
           <Row>
           <h3> Total Price of Items in Cart: ${(Math.round(cartTotal * 100) / 100).toFixed(2)} </h3>
+          <button onClick={() => clearCart()}> Clear Cart </button>
+          <br>
+          </br>
           </Row>
           
         </Container>
