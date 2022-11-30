@@ -25,7 +25,7 @@ The ThaiItem component receives information on each food, the cart (to get its q
 
 
 ### How the User Triggers State Changes
-The user can trigger state changes the following ways: Adding an item to the cart, Selecting a Filter, Selecting a Sort Mechanism, Removing an Item from the cart or clearing the cart
+The user can trigger state changes the following ways: Adding an item to the cart, Selecting a Filter, Selecting a Sort Mechanism, Removing an Item from the cart or clearing the cart. The list of data is a state variable, so changes to the data changes sate
 
 
 ## Note: Weird Bug 
